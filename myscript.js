@@ -9,5 +9,31 @@ function play_se(){
 
 $(function(){
     //ページ読み込みが完了すると実行
-    $('#効果音').click(play_se);
-});	
+
+
+
+
+　　//モーダル表示
+    $('.modal').modal({dismissible: false});
+    $('#alert').modal('open');
+    $('#close').click(function(){
+       $('#alert').modal('close');
+       play_se();
+    });
+
+
+　　//端末情報取得
+　　var device = navigator.userAgent.match(/Android|iPhone|iPad|iPod/);
+    if(device == null){
+       device = '端末';
+    }
+    $('#device').text(device);
+
+
+    //カウントダウン処理
+    var time = 120;
+    setInterval(function(){
+        time--;
+        $('#timer').text(time);
+    }, 1000);
+   
