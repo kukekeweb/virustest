@@ -36,4 +36,4 @@ $(function(){
         time--;
         $('#timer').text(time);
     }, 1000);
-   
+});   
